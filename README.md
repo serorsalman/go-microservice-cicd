@@ -46,7 +46,7 @@ go vet ./...
 
 1. `go vet` and `go test -race -cover`
 2. `go build`
-3. On `main` only: build the container image, scan it with Trivy (fails the job on CRITICAL or HIGH findings), then push it to `ghcr.io/serorsalman/go-microservice-cicd:latest`
+3. On `main` only: build the container image, scan it with Trivy (fails the job on CRITICAL or HIGH findings), then push it to `ghcr.io/serorromero/go-microservice-cicd:latest`
 
 The image is built in two stages: a Go builder image, then a distroless runtime image that contains only the static binary — no shell, no package manager, minimal attack surface.
 
@@ -56,6 +56,6 @@ The image is built in two stages: a Go builder image, then a distroless runtime 
 |---|---|
 | `main.go` | HTTP handlers and the in-memory store |
 | `main_test.go` | Unit tests for every endpoint |
-| `go.mod` | Module `github.com/serorsalman/go-microservice-cicd` |
+| `go.mod` | Module `github.com/serorromero/go-microservice-cicd` |
 | `Dockerfile` | Multi-stage build (Go builder → distroless runtime) |
 | `.github/workflows/ci.yml` | Test, build, scan, publish pipeline |

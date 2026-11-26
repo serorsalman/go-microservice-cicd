@@ -42,12 +42,12 @@ jobs:
         with:
           context: .
           load: true
-          tags: ghcr.io/serorsalman/go-microservice-cicd:latest
+          tags: ghcr.io/serorromero/go-microservice-cicd:latest
 
       - name: Scan image with Trivy
         uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0, pinned by commit SHA
         with:
-          image-ref: ghcr.io/serorsalman/go-microservice-cicd:latest
+          image-ref: ghcr.io/serorromero/go-microservice-cicd:latest
           format: table
           exit-code: "1"
           severity: CRITICAL,HIGH
@@ -65,4 +65,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/serorsalman/go-microservice-cicd:latest
+          tags: ghcr.io/serorromero/go-microservice-cicd:latest
